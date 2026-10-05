@@ -1,0 +1,79 @@
+{
+    "country": "Niger",
+    "source": "GDELT",
+    "total_articles": 9,
+    "articles": [
+        {
+            "title": "被指煽动尼日尔未遂兵变 ， 法国否认 ： 有关指控 纯属幻想",
+            "date": "2026-09-07 03:00:00",
+            "url": "https://hqtime.huanqiu.com/share/article/4T6ZWEWaCci",
+            "domain": "hqtime.huanqiu.com",
+            "language": "Chinese",
+            "source_country": "China"
+        },
+        {
+            "title": "Niger : Un journaliste dune importante radio libéré après plus dun an de détention",
+            "date": "2026-07-18 14:45:00",
+            "url": "https://www.20minutes.fr/monde/niger/4235138-20260718-niger-journaliste-importante-radio-libere-apres-plus-an-detention",
+            "domain": "20minutes.fr",
+            "language": "French",
+            "source_country": "France"
+        },
+        {
+            "title": "Pourquoi le Mali , le Burkina Faso et le Niger quittent - ils la CPI ?",
+            "date": "2026-07-13 15:30:00",
+            "url": "https://www.bbc.com/afrique/articles/cz7545022q5o",
+            "domain": "bbc.com",
+            "language": "French",
+            "source_country": "United Kingdom"
+        },
+        {
+            "title": "Niger : plusieurs soldats tués dans des attaques dun groupe rebelle dans le Nord",
+            "date": "2026-08-16 19:45:00",
+            "url": "http://seneweb.com/fr/news/Afrique/niger-plusieurs-soldats-tues-dans-des-attaques-dun-groupe-rebelle-dans-le-nord_n_501504.html",
+            "domain": "seneweb.com",
+            "language": "French",
+            "source_country": "Senegal"
+        },
+        {
+            "title": "Niger : un projet de raffinerie à 1 , 9 milliard de dollars",
+            "date": "2026-08-16 17:30:00",
+            "url": "https://bamada.net/niger-un-projet-de-raffinerie-a-19-milliard-de-dollars",
+            "domain": "bamada.net",
+            "language": "French",
+            "source_country": "Mali"
+        },
+        {
+            "title": "الحويج يتسلم أوراق اعتماد قنصل النيجر العام في بنغازي",
+            "date": "2026-07-14 19:15:00",
+            "url": "https://alwasat.ly/news/libya/524778",
+            "domain": "alwasat.ly",
+            "language": "Arabic",
+            "source_country": "Libya"
+        },
+        {
+            "title": "Trois ans après , où en est la gouvernance sous Tiani ?",
+            "date": "2026-07-24 13:45:00",
+            "url": "https://www.dw.com/fr/chef-cnsp-invoque-mauvaise-gouvernance-economique-et-sociale-pour-justifier-putsch-juillet-niger/a-78097205",
+            "domain": "dw.com",
+            "language": "French",
+            "source_country": "Germany"
+        },
+        {
+            "title": "Le Bénin soppose à toute tentative de déstabilisation du Niger",
+            "date": "2026-09-07 04:15:00",
+            "url": "http://french.people.com.cn/Afrique/n3/2026/0907/c96852-20496555.html",
+            "domain": "french.people.com.cn",
+            "language": "French",
+            "source_country": "China"
+        },
+        {
+            "title": "Niger : 16 soldats tués vendredi lors dune attaque terroriste dans lOuest ( média d État )",
+            "date": "2026-07-19 18:00:00",
+            "url": "http://www.seneweb.com/fr/news/Afrique/niger-16-soldats-tues-vendredi-lors-dune-attaque-terroriste-dans-louest-media-detat_n_498693.html",
+            "domain": "seneweb.com",
+            "language": "French",
+            "source_country": "Senegal"
+        }
+    ]
+}
