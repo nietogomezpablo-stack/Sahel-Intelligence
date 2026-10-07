@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahel Intelligence Map</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #111827;
+            font-family: Arial, sans-serif;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 280px;
+            padding: 18px;
+            background: rgba(17, 24, 39, 0.94);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .info-panel h1 {
+            margin: 0 0 8px 0;
+            font-size: 20px;
+        }
+
+        .info-panel p {
+            margin: 5px 0;
+            font-size: 13px;
+            color: #d1d5db;
+        }
+
+        .leaflet-popup-content {
+            min-width: 260px;
+        }
+
+        .event-title {
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .event-data {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<div class="info-panel">
+    <h1>Sahel Intelligence</h1>
+    <p>Geopolitical OSINT Platform</p>
+    <p id="event-count">Cargando eventos...</p>
+</div>
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<script>
+    const map = L.map("map").setView(
+        [17.5, 8.0],
+        5
+    );
+
+    L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+            attribution: "&copy; OpenStreetMap contributors"
+        }
+    ).addTo(map);
+
+    fetch("../data/exports/events.geojson")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(
+                    "No se pudo cargar el GeoJSON"
+                );
+            }
+
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById(
+                "event-count"
+            ).textContent =
+                `${data.features.length} eventos geolocalizados`;
+
+            const eventLayer = L.geoJSON(
+                data,
+                {
+                    pointToLayer: function(
+                        feature,
+                        latlng
+                    ) {
+                        return L.circleMarker(
+                            latlng,
+                            {
+                                radius: 8,
+                                weight: 2,
+                                fillOpacity: 0.8
+                            }
+                        );
+                    },
+
+                    onEachFeature: function(
+                        feature,
+                        layer
+                    ) {
+                        const properties =
+                            feature.properties;
+
+                        const popup = `
+                            <div class="event-title">
+                                ${properties.title}
+                            </div>
+
+                            <div class="event-data">
+                                <strong>Fecha:</strong>
+                                ${properties.event_date}
+                            </div>
+
+                            <div class="event-data">
+                                <strong>Tipo:</strong>
+                                ${properties.event_type}
+                            </div>
+
+                            <div class="event-data">
+                                <strong>País:</strong>
+                                ${properties.country}
+                            </div>
+
+                            <div class="event-data">
+                                <strong>Lugar:</strong>
+                                ${properties.location}
+                            </div>
+
+                            <div class="event-data">
+                                <strong>Confianza:</strong>
+                                ${properties.confidence}
+                            </div>
+                        `;
+
+                        layer.bindPopup(popup);
+                    }
+                }
+            );
+
+            eventLayer.addTo(map);
+
+            if (data.features.length > 0) {
+                map.fitBounds(
+                    eventLayer.getBounds(),
+                    {
+                        padding: [40, 40]
+                    }
+                );
+            }
+        })
+        .catch(error => {
+            console.error(error);
+
+            document.getElementById(
+                "event-count"
+            ).textContent =
+                "Error cargando eventos";
+        });
+</script>
+
+</body>
+</html>
