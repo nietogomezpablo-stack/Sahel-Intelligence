@@ -1,0 +1,941 @@
+{
+  "nodes": [
+    {
+      "id": "event:1",
+      "label": "Ataque del MPLJ contra fuerzas de seguridad en Séguédine",
+      "type": "event",
+      "properties": {
+        "event_date": "2026-08-14",
+        "event_type": "armed_attack",
+        "country": "Niger",
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "event:2",
+      "label": "Reivindicación de ataque por Mouvement patriotique pour la liberté et la justice",
+      "type": "event",
+      "properties": {
+        "event_date": "2026-08-15",
+        "event_type": "claim_responsibility",
+        "country": "Niger",
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "event:3",
+      "label": "Ataque en Bankilaré-Téra",
+      "type": "event",
+      "properties": {
+        "event_date": "2026-07-17",
+        "event_type": "armed_attack",
+        "country": "Niger",
+        "confidence": 0.7
+      }
+    },
+    {
+      "id": "event:5",
+      "label": "Ataque del MPLJ contra fuerzas de seguridad en Séguédine",
+      "type": "event",
+      "properties": {
+        "event_date": "2026-08-14",
+        "event_type": "armed_attack",
+        "country": "Niger",
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "event:6",
+      "label": "Ataque del MPLJ contra fuerzas de seguridad en Séguédine",
+      "type": "event",
+      "properties": {
+        "event_date": "2026-08-14",
+        "event_type": "armed_attack",
+        "country": "Niger",
+        "confidence": 0.8
+      }
+    },
+    {
+      "id": "entity:339",
+      "label": "报道称，尼日尔首都尼亚美8月29日发生未遂兵变。参与者首先袭击位于尼亚美国际机场内的“101基地”，随后袭击多处目标，战斗蔓延至总统府。尼日尔军方于次日重新控制“101基地”。尼日尔国家媒体称，有数百名士兵参与兵变，数十人死亡或被捕",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:340",
+      "label": "对此，巴罗5日接受法国国际广播电台采访时回应称，法国从未有过这种意图，也没有为此动用任何手段",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:341",
+      "label": "Niger",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:342",
+      "label": "Hamid Mahmoud",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:343",
+      "label": "Radio Sahara FM",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:344",
+      "label": "Agadez",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:346",
+      "label": "Russie",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:347",
+      "label": "AFP",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:352",
+      "label": "Aïr Info",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:353",
+      "label": "Radio Sahara FM",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:354",
+      "label": "Sahara FM",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:355",
+      "label": "Nord",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:360",
+      "label": "Niamey",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:364",
+      "label": "Kollo",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:366",
+      "label": "Etat",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:367",
+      "label": "Mahaman Sani",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:368",
+      "label": "Aïr Info",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:369",
+      "label": "Massaouda Jaharou",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:370",
+      "label": "Deutsche Welle",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:374",
+      "label": "ONU",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:375",
+      "label": "Saraounia",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:376",
+      "label": "Ibro Chaïbou",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:377",
+      "label": "Mali",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:378",
+      "label": "Burkina Faso",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:380",
+      "label": "CPI",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:381",
+      "label": "Published Le Mali",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:384",
+      "label": "Cour pénale internationale",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:386",
+      "label": "AES",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:387",
+      "label": "l'Afrique",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:391",
+      "label": "Séguédine",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:395",
+      "label": "Libye",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:396",
+      "label": "Europe",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:400",
+      "label": "Dimanche après-midi",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:401",
+      "label": "Bilma",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:404",
+      "label": "Mouvement patriotique pour la liberté et la justice",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:406",
+      "label": "FDS",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:407",
+      "label": "Forces de défense",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:408",
+      "label": "Facebook",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:411",
+      "label": "Mohamed Bazoum",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:413",
+      "label": "Garde nationale",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:416",
+      "label": "Bénin",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:417",
+      "label": "Tchad",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:418",
+      "label": "MPJL",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:420",
+      "label": "Moussa Konaï",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:423",
+      "label": "Abdourahamane Tiani",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:425",
+      "label": "GROUP",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:427",
+      "label": "Dosso",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:430",
+      "label": "Primature",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:431",
+      "label": "ministre nigérien des Affaires étrangères",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:432",
+      "label": "Coopération et des Nigériens",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:433",
+      "label": "Bakary Yaou Sangaré",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:435",
+      "label": "État du Niger",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:437",
+      "label": "BOT",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:438",
+      "label": "Build",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:439",
+      "label": "Operate and Transfer",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:441",
+      "label": "AC/Sf",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:442",
+      "label": "APA",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:446",
+      "label": "Nigériens",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:448",
+      "label": "Tahirou Garka",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:449",
+      "label": "G25",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:451",
+      "label": "Nigérien",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:452",
+      "label": "DW",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:453",
+      "label": "Coupures fréquentes d'électricité",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:457",
+      "label": "Hamani Oumarou",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:458",
+      "label": "Laboratoire d'études et de recherches",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:459",
+      "label": "LASDEL",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:464",
+      "label": "FMI",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:465",
+      "label": "Salmata Taya",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:466",
+      "label": "M62",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:468",
+      "label": "CFA",
+      "type": "entity",
+      "properties": {
+        "entity_type": "MISC"
+      }
+    },
+    {
+      "id": "entity:471",
+      "label": "Commission de lutte contre la délinquance économique",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:472",
+      "label": "Coldeff",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:473",
+      "label": "Coldeff",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:475",
+      "label": "Transparency International",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:477",
+      "label": "Afrique",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:482",
+      "label": "Wilfried Léandre Houngbédji",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:485",
+      "label": "Cotonou",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:486",
+      "label": "M. Houngbédji",
+      "type": "entity",
+      "properties": {
+        "entity_type": "PER"
+      }
+    },
+    {
+      "id": "entity:488",
+      "label": "Défense nationale",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:489",
+      "label": "aéroport international de Niamey",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:491",
+      "label": "Ouest",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:492",
+      "label": "État",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:496",
+      "label": "Agence nigérienne de presse",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:497",
+      "label": "ANP",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:500",
+      "label": "Al-Qaïda",
+      "type": "entity",
+      "properties": {
+        "entity_type": "ORG"
+      }
+    },
+    {
+      "id": "entity:502",
+      "label": "Téra",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:503",
+      "label": "Tillabéri",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:505",
+      "label": "Bankilaré-Téra",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:506",
+      "label": "Doungouro",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "entity:612",
+      "label": "Tiani",
+      "type": "entity",
+      "properties": {
+        "entity_type": "LOC"
+      }
+    },
+    {
+      "id": "location:1",
+      "label": "Séguédine",
+      "type": "location",
+      "properties": {
+        "country": "Niger",
+        "latitude": 20.1962138,
+        "longitude": 12.9665987
+      }
+    },
+    {
+      "id": "location:2",
+      "label": "Bankilaré-Téra",
+      "type": "location",
+      "properties": {
+        "country": "Niger",
+        "latitude": 14.5828541,
+        "longitude": 0.725173
+      }
+    },
+    {
+      "id": "article:1",
+      "label": "被指煽动尼日尔未遂兵变 ， 法国否认 ： 有关指控 纯属幻想",
+      "type": "source",
+      "properties": {
+        "date": "2026-09-07 03:00:00",
+        "url": "https://hqtime.huanqiu.com/share/article/4T6ZWEWaCci",
+        "domain": "hqtime.huanqiu.com"
+      }
+    },
+    {
+      "id": "article:2",
+      "label": "Niger : Un journaliste dune importante radio libéré après plus dun an de détention",
+      "type": "source",
+      "properties": {
+        "date": "2026-07-18 14:45:00",
+        "url": "https://www.20minutes.fr/monde/niger/4235138-20260718-niger-journaliste-importante-radio-libere-apres-plus-an-detention",
+        "domain": "20minutes.fr"
+      }
+    },
+    {
+      "id": "article:3",
+      "label": "Pourquoi le Mali , le Burkina Faso et le Niger quittent - ils la CPI ?",
+      "type": "source",
+      "properties": {
+        "date": "2026-07-13 15:30:00",
+        "url": "https://www.bbc.com/afrique/articles/cz7545022q5o",
+        "domain": "bbc.com"
+      }
+    },
+    {
+      "id": "article:4",
+      "label": "Niger : plusieurs soldats tués dans des attaques dun groupe rebelle dans le Nord",
+      "type": "source",
+      "properties": {
+        "date": "2026-08-16 19:45:00",
+        "url": "http://seneweb.com/fr/news/Afrique/niger-plusieurs-soldats-tues-dans-des-attaques-dun-groupe-rebelle-dans-le-nord_n_501504.html",
+        "domain": "seneweb.com"
+      }
+    },
+    {
+      "id": "article:5",
+      "label": "Niger : un projet de raffinerie à 1 , 9 milliard de dollars",
+      "type": "source",
+      "properties": {
+        "date": "2026-08-16 17:30:00",
+        "url": "https://bamada.net/niger-un-projet-de-raffinerie-a-19-milliard-de-dollars",
+        "domain": "bamada.net"
+      }
+    },
+    {
+      "id": "article:6",
+      "label": "الحويج يتسلم أوراق اعتماد قنصل النيجر العام في بنغازي",
+      "type": "source",
+      "properties": {
+        "date": "2026-07-14 19:15:00",
+        "url": "https://alwasat.ly/news/libya/524778",
+        "domain": "alwasat.ly"
+      }
+    },
+    {
+      "id": "article:7",
+      "label": "Trois ans après , où en est la gouvernance sous Tiani ?",
+      "type": "source",
+      "properties": {
+        "date": "2026-07-24 13:45:00",
+        "url": "https://www.dw.com/fr/chef-cnsp-invoque-mauvaise-gouvernance-economique-et-sociale-pour-justifier-putsch-juillet-niger/a-78097205",
+        "domain": "dw.com"
+      }
+    },
+    {
+      "id": "article:8",
+      "label": "Le Bénin soppose à toute tentative de déstabilisation du Niger",
+      "type": "source",
+      "properties": {
+        "date": "2026-09-07 04:15:00",
+        "url": "http://french.people.com.cn/Afrique/n3/2026/0907/c96852-20496555.html",
+        "domain": "french.people.com.cn"
+      }
+    },
+    {
+      "id": "article:9",
+      "label": "Niger : 16 soldats tués vendredi lors dune attaque terroriste dans lOuest ( média d État )",
+      "type": "source",
+      "properties": {
+        "date": "2026-07-19 18:00:00",
+        "url": "http://www.seneweb.com/fr/news/Afrique/niger-16-soldats-tues-vendredi-lors-dune-attaque-terroriste-dans-louest-media-detat_n_498693.html",
+        "domain": "seneweb.com"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "event:2",
+      "target": "entity:404",
+      "relation": "claimant"
+    },
+    {
+      "source": "event:1",
+      "target": "location:1",
+      "relation": "occurred_at"
+    },
+    {
+      "source": "event:3",
+      "target": "location:2",
+      "relation": "occurred_at"
+    },
+    {
+      "source": "event:5",
+      "target": "location:1",
+      "relation": "occurred_at"
+    },
+    {
+      "source": "event:6",
+      "target": "location:1",
+      "relation": "occurred_at"
+    },
+    {
+      "source": "article:4",
+      "target": "event:1",
+      "relation": "supports"
+    },
+    {
+      "source": "article:4",
+      "target": "event:2",
+      "relation": "supports"
+    },
+    {
+      "source": "article:9",
+      "target": "event:3",
+      "relation": "supports"
+    },
+    {
+      "source": "article:4",
+      "target": "event:5",
+      "relation": "supports"
+    },
+    {
+      "source": "article:4",
+      "target": "event:6",
+      "relation": "supports"
+    }
+  ]
+}
