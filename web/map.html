@@ -51,6 +51,19 @@
             margin-bottom: 20px;
         }
 
+        .navigation {
+            margin-bottom: 20px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            background: #374151;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
         .stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -116,6 +129,12 @@
 
     <div class="subtitle">
         Geopolitical OSINT Platform
+    </div>
+
+    <div class="navigation">
+        <a href="/graph">
+            Abrir Knowledge Graph
+        </a>
     </div>
 
     <div class="stats">
@@ -299,9 +318,7 @@
         fetch(url)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(
-                        "API error"
-                    );
+                    throw new Error("API error");
                 }
 
                 return response.json();
@@ -318,66 +335,62 @@
                             event.longitude !== null
                     );
 
-                geolocatedEvents.forEach(
-                    event => {
-                        const marker =
-                            L.circleMarker(
-                                [
-                                    event.latitude,
-                                    event.longitude
-                                ],
-                                {
-                                    radius: 8,
-                                    weight: 2,
-                                    fillOpacity: 0.8
-                                }
-                            );
+                geolocatedEvents.forEach(event => {
+                    const marker =
+                        L.circleMarker(
+                            [
+                                event.latitude,
+                                event.longitude
+                            ],
+                            {
+                                radius: 8,
+                                weight: 2,
+                                fillOpacity: 0.8
+                            }
+                        );
 
-                        marker.bindPopup(`
-                            <strong>
-                                ${event.title}
-                            </strong>
+                    marker.bindPopup(`
+                        <strong>${event.title}</strong>
 
-                            <br><br>
+                        <br><br>
 
-                            <strong>Fecha:</strong>
-                            ${event.event_date}
+                        <strong>Fecha:</strong>
+                        ${event.event_date}
 
-                            <br>
+                        <br>
 
-                            <strong>Tipo:</strong>
-                            ${event.event_type}
+                        <strong>Tipo:</strong>
+                        ${event.event_type}
 
-                            <br>
+                        <br>
 
-                            <strong>País:</strong>
-                            ${event.country}
+                        <strong>País:</strong>
+                        ${event.country}
 
-                            <br>
+                        <br>
 
-                            <strong>Lugar:</strong>
-                            ${event.location}
+                        <strong>Lugar:</strong>
+                        ${event.location}
 
-                            <br>
+                        <br>
 
-                            <strong>Confianza:</strong>
-                            ${event.confidence}
+                        <strong>Confianza:</strong>
+                        ${event.confidence}
 
-                            <br><br>
+                        <br><br>
 
-                            <a
-                                href="/api/events/${event.id}"
-                                target="_blank"
-                            >
-                                Ver datos completos
-                            </a>
-                        `);
+                        <a
+                            href="/api/events/${event.id}"
+                            target="_blank"
+                        >
+                            Ver datos completos
+                        </a>
+                    `);
 
-                        marker.addTo(eventLayer);
+                    marker.addTo(eventLayer);
 
-                        markers.push(marker);
-                    }
-                );
+                    markers.push(marker);
+                });
 
                 document.getElementById(
                     "status"

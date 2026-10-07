@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sahel Intelligence - Knowledge Graph</title>
+
+    <script
+        src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js">
+    </script>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: #111827;
+            color: white;
+        }
+
+        #network {
+            width: 100%;
+            height: 100%;
+        }
+
+        .panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 300px;
+            padding: 20px;
+            background: rgba(17, 24, 39, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .panel h1 {
+            margin: 0 0 5px 0;
+            font-size: 22px;
+        }
+
+        .subtitle {
+            color: #9ca3af;
+            margin-bottom: 15px;
+        }
+
+        .navigation {
+            margin-bottom: 15px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            background: #374151;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .legend {
+            border-top: 1px solid #374151;
+            padding-top: 15px;
+            line-height: 1.8;
+            color: #d1d5db;
+        }
+
+        #graph-status {
+            margin-top: 15px;
+            color: #9ca3af;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="network"></div>
+
+<div class="panel">
+    <h1>Knowledge Graph</h1>
+
+    <div class="subtitle">
+        Sahel Intelligence
+    </div>
+
+    <div class="navigation">
+        <a href="/">
+            Volver al mapa
+        </a>
+    </div>
+
+    <div class="legend">
+        ◆ Evento
+        <br>
+        ● Entidad
+        <br>
+        ▲ Lugar
+        <br>
+        ■ Fuente
+    </div>
+
+    <div id="graph-status">
+        Cargando grafo...
+    </div>
+</div>
+
+<script>
+    fetch("/api/graph")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("API error");
+            }
+
+            return response.json();
+        })
+        .then(graph => {
+            const nodes = graph.nodes.map(node => {
+                let shape = "dot";
+
+                if (node.type === "event") {
+                    shape = "diamond";
+                }
+
+                if (node.type === "location") {
+                    shape = "triangle";
+                }
+
+                if (node.type === "source") {
+                    shape = "box";
+                }
+
+                return {
+                    id: node.id,
+                    label: node.label,
+                    shape: shape,
+                    title:
+                        JSON.stringify(
+                            node.properties,
+                            null,
+                            2
+                        )
+                };
+            });
+
+            const edges = graph.edges.map(edge => ({
+                from: edge.source,
+                to: edge.target,
+                label: edge.relation,
+                arrows: "to"
+            }));
+
+            const container =
+                document.getElementById(
+                    "network"
+                );
+
+            const data = {
+                nodes: new vis.DataSet(nodes),
+                edges: new vis.DataSet(edges)
+            };
+
+            const options = {
+                interaction: {
+                    hover: true,
+                    navigationButtons: true
+                },
+
+                physics: {
+                    stabilization: true
+                },
+
+                edges: {
+                    font: {
+                        color: "#d1d5db",
+                        size: 11
+                    }
+                }
+            };
+
+            new vis.Network(
+                container,
+                data,
+                options
+            );
+
+            document.getElementById(
+                "graph-status"
+            ).textContent =
+                `${nodes.length} nodos · ${edges.length} relaciones · API conectada`;
+        })
+        .catch(error => {
+            document.getElementById(
+                "graph-status"
+            ).textContent =
+                "Error de conexión con API";
+
+            console.error(error);
+        });
+</script>
+
+</body>
+</html>

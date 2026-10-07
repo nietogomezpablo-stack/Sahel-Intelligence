@@ -7,7 +7,7 @@ url = "https://api.gdeltproject.org/api/v2/doc/doc"
 params = {
     "query": '"Niger" -Nigeria -"Niger Delta"',
     "mode": "ArtList",
-    "maxrecords": 10,
+    "maxrecords": 50,
     "format": "json"
 }
 

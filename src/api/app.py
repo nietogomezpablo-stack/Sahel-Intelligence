@@ -20,6 +20,14 @@ def index():
     )
 
 
+@app.route("/graph")
+def graph():
+    return send_from_directory(
+        "../../web",
+        "graph.html"
+    )
+
+
 @app.route("/api/health")
 def health():
     return jsonify({
@@ -210,6 +218,151 @@ def get_stats():
         "entities": total_entities,
         "sources": total_sources,
         "events_by_type": events_by_type
+    })
+
+
+@app.route("/api/graph")
+def get_graph():
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    nodes = {}
+    edges = []
+
+    cursor.execute("""
+    SELECT
+        id,
+        title,
+        event_date,
+        event_type,
+        country,
+        confidence
+    FROM events
+    """)
+
+    for event in cursor.fetchall():
+        node_id = f"event:{event['id']}"
+
+        nodes[node_id] = {
+            "id": node_id,
+            "label": event["title"],
+            "type": "event",
+            "properties": {
+                "event_date": event["event_date"],
+                "event_type": event["event_type"],
+                "country": event["country"],
+                "confidence": event["confidence"]
+            }
+        }
+
+    cursor.execute("""
+    SELECT
+        ee.event_id,
+        ee.entity_id,
+        ee.relation_type,
+        ent.canonical_name,
+        ent.entity_type
+    FROM event_entities ee
+    JOIN entities ent
+        ON ee.entity_id = ent.id
+    """)
+
+    for relation in cursor.fetchall():
+        entity_node_id = (
+            f"entity:{relation['entity_id']}"
+        )
+
+        nodes[entity_node_id] = {
+            "id": entity_node_id,
+            "label": relation["canonical_name"],
+            "type": "entity",
+            "properties": {
+                "entity_type": relation["entity_type"]
+            }
+        }
+
+        edges.append({
+            "source": f"event:{relation['event_id']}",
+            "target": entity_node_id,
+            "relation": relation["relation_type"]
+        })
+
+    cursor.execute("""
+    SELECT
+        el.event_id,
+        el.location_id,
+        el.relation_type,
+        l.canonical_name,
+        l.country,
+        l.latitude,
+        l.longitude
+    FROM event_locations el
+    JOIN locations l
+        ON el.location_id = l.id
+    """)
+
+    for relation in cursor.fetchall():
+        location_node_id = (
+            f"location:{relation['location_id']}"
+        )
+
+        nodes[location_node_id] = {
+            "id": location_node_id,
+            "label": relation["canonical_name"],
+            "type": "location",
+            "properties": {
+                "country": relation["country"],
+                "latitude": relation["latitude"],
+                "longitude": relation["longitude"]
+            }
+        }
+
+        edges.append({
+            "source": f"event:{relation['event_id']}",
+            "target": location_node_id,
+            "relation": relation["relation_type"]
+        })
+
+    cursor.execute("""
+    SELECT
+        ea.event_id,
+        ea.article_id,
+        a.title,
+        a.date,
+        a.url,
+        a.domain
+    FROM event_articles ea
+    JOIN articles a
+        ON ea.article_id = a.id
+    """)
+
+    for relation in cursor.fetchall():
+        article_node_id = (
+            f"article:{relation['article_id']}"
+        )
+
+        nodes[article_node_id] = {
+            "id": article_node_id,
+            "label": relation["title"],
+            "type": "source",
+            "properties": {
+                "date": relation["date"],
+                "url": relation["url"],
+                "domain": relation["domain"]
+            }
+        }
+
+        edges.append({
+            "source": article_node_id,
+            "target": f"event:{relation['event_id']}",
+            "relation": "supports"
+        })
+
+    connection.close()
+
+    return jsonify({
+        "nodes": list(nodes.values()),
+        "edges": edges
     })
 
 
