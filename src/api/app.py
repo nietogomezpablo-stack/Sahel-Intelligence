@@ -150,12 +150,27 @@ def get_event(event_id):
     JOIN articles a
         ON ea.article_id = a.id
     WHERE ea.event_id = ?
+    ORDER BY a.date
     """, (event_id,))
 
-    event["sources"] = [
+    sources = [
         dict(row)
         for row in cursor.fetchall()
     ]
+
+    event["sources"] = sources
+
+    domains = {
+        source["domain"]
+        for source in sources
+        if source["domain"]
+    }
+
+    event["corroboration"] = {
+        "source_count": len(sources),
+        "independent_domains": len(domains),
+        "domains": sorted(domains)
+    }
 
     connection.close()
 
@@ -167,10 +182,7 @@ def get_stats():
     connection = get_connection()
     cursor = connection.cursor()
 
-    cursor.execute("""
-    SELECT COUNT(*)
-    FROM events
-    """)
+    cursor.execute("SELECT COUNT(*) FROM events")
     total_events = cursor.fetchone()[0]
 
     cursor.execute("""
@@ -181,16 +193,10 @@ def get_stats():
     """)
     geolocated_events = cursor.fetchone()[0]
 
-    cursor.execute("""
-    SELECT COUNT(*)
-    FROM entities
-    """)
+    cursor.execute("SELECT COUNT(*) FROM entities")
     total_entities = cursor.fetchone()[0]
 
-    cursor.execute("""
-    SELECT COUNT(*)
-    FROM articles
-    """)
+    cursor.execute("SELECT COUNT(*) FROM articles")
     total_sources = cursor.fetchone()[0]
 
     cursor.execute("""
@@ -268,12 +274,10 @@ def get_graph():
     """)
 
     for relation in cursor.fetchall():
-        entity_node_id = (
-            f"entity:{relation['entity_id']}"
-        )
+        node_id = f"entity:{relation['entity_id']}"
 
-        nodes[entity_node_id] = {
-            "id": entity_node_id,
+        nodes[node_id] = {
+            "id": node_id,
             "label": relation["canonical_name"],
             "type": "entity",
             "properties": {
@@ -283,7 +287,7 @@ def get_graph():
 
         edges.append({
             "source": f"event:{relation['event_id']}",
-            "target": entity_node_id,
+            "target": node_id,
             "relation": relation["relation_type"]
         })
 
@@ -302,12 +306,10 @@ def get_graph():
     """)
 
     for relation in cursor.fetchall():
-        location_node_id = (
-            f"location:{relation['location_id']}"
-        )
+        node_id = f"location:{relation['location_id']}"
 
-        nodes[location_node_id] = {
-            "id": location_node_id,
+        nodes[node_id] = {
+            "id": node_id,
             "label": relation["canonical_name"],
             "type": "location",
             "properties": {
@@ -319,7 +321,7 @@ def get_graph():
 
         edges.append({
             "source": f"event:{relation['event_id']}",
-            "target": location_node_id,
+            "target": node_id,
             "relation": relation["relation_type"]
         })
 
@@ -337,12 +339,10 @@ def get_graph():
     """)
 
     for relation in cursor.fetchall():
-        article_node_id = (
-            f"article:{relation['article_id']}"
-        )
+        node_id = f"article:{relation['article_id']}"
 
-        nodes[article_node_id] = {
-            "id": article_node_id,
+        nodes[node_id] = {
+            "id": node_id,
             "label": relation["title"],
             "type": "source",
             "properties": {
@@ -353,7 +353,7 @@ def get_graph():
         }
 
         edges.append({
-            "source": article_node_id,
+            "source": node_id,
             "target": f"event:{relation['event_id']}",
             "relation": "supports"
         })

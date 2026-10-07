@@ -33,12 +33,16 @@ PIPELINE_STEPS = [
         "src/processing/extract_events.py"
     ),
     (
-        "Geocodificación de eventos",
+        "Geocodificación",
         "src/processing/geocode_events.py"
     ),
     (
         "Persistencia de lugares",
         "src/processing/store_locations.py"
+    ),
+    (
+        "Cálculo de confidence",
+        "src/processing/calculate_confidence.py"
     ),
     (
         "Comprobación de base de datos",
